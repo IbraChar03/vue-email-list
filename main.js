@@ -20,10 +20,10 @@ const {createApp} = Vue;
       });
       
     }
-    console.log(this.arrayEmail)
-     
-  }
 
+    console.log(this.arrayEmail)
+  }
+ 
 
 }).mount("#app")
 

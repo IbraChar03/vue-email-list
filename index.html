@@ -16,7 +16,7 @@
 
     <div id="app">  
       <ul id="list"> 
-        <li v-for="item in arrayEmail"> {{item}}</li>      
+        <li v-for="item in arrayEmail" v-if="arrayEmail.length == 10"> {{item}}</li>      
       </ul>
     </div>
         
