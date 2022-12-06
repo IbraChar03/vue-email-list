@@ -4,6 +4,7 @@ const {createApp} = Vue;
 
     data(){
         return{
+          numEmail : 10,
            arrayEmail: [],
         }
     
