@@ -4,28 +4,30 @@ const {createApp} = Vue;
 
     data(){
         return{
-           email:``,
+           arrayEmail: [],
         }
     
     },
     methods:{
           apiEmail(){
-            axios.get(`https:flynn.boolean.careers/exercises/api/random/mail`)
+            axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`)
             .then((result) => {
-              console.log(result.data.response);
-              this.email=result.data.response;
-              //   let ul=document.getElementById("list")
-              //  let element=document.createElement("li")
-              // element.innerHTML= this.email
-              //  ul.append(element)
+              console.log(result.data.response);             
             });
-          
           
           }
                   
    },
    mounted(){   
-     this.apiEmail()
+    for (let index = 0; index < 10; index++) {
+      axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`)
+      .then((result) => {
+        this.arrayEmail.push(result.data.response);
+        console.log(result.data.response);        
+      });
+      
+    }
+    console.log(this.arrayEmail)
      
   }
 
